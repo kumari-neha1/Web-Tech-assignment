@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Responsive Layout</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    header {
+        background: #be0646;
+        color: rgb(2, 2, 2);
+        padding: 15px;
+        text-align: center;
+    }
+
+    /* FLEX layout for large screens */
+    .container {
+        display: flex;
+        min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        background: #6e0d0d;
+        width: 25%;
+        padding: 20px;
+        color: white;
+    }
+
+    /* Content */
+    .content {
+        background: #f4f4f4;
+        width: 75%;
+        padding: 20px;
+    }
+
+    /* FLOAT + CLEAR example */
+    .box {
+        width: 100px;
+        height: 100px;
+        background: rgb(13, 0, 23);
+        float: right;
+        margin: 10px;
+    }
+
+    .clear {
+        clear: both;
+    }
+
+    /* ------------ MEDIA QUERIES ------------ */
+
+    /* For screens < 600px → Stack */
+    @media (max-width: 600px) {
+        .container {
+            flex-direction: column;
+        }
+        .sidebar, .content {
+            width: 100%;
+        }
+    }
+
+    /* For 600px–900px → Sidebar smaller */
+    @media (min-width: 600px) and (max-width: 900px) {
+        .sidebar {
+            width: 35%;
+        }
+        .content {
+            width: 65%;
+        }
+    }
+
+    /* For > 900px → Default layout */
+</style>
+</head>
+<body>
+
+<header>
+    <h1>My Responsive Layout</h1>
+</header>
+
+<div class="container">
+
+    <div class="sidebar">
+        <h2>Sidebar</h2>
+        <p>Links, Menu, Navigation</p>
+    </div>
+
+    <div class="content">
+        <h2>Content Area</h2>
+
+        <div class="box"></div>
+        <p>This is the main content section.</p>
+        <div class="clear"></div>
+
+        <p></p>
+    </div>
+
+</div>
+
+</body>
+</html>
